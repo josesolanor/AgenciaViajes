@@ -29,9 +29,13 @@ namespace API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddMvc().AddNewtonsoftJson(options => options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
             services.AddControllers();
+            
+
             services.AddTransient<ICRUDMethods<TravelPackage>, TravelPackageService>();
             services.AddTransient<ICRUDMethods<Entities.Client>, ClientService>();
+            services.AddTransient<ICRUDMethods<Booking>, BookingService>();
             services.AddDbContext<ApplicationDBContext>(options => options.UseSqlite("Filename=MyDatabase.db"));
             
         }

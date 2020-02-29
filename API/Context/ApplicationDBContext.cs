@@ -13,11 +13,6 @@ namespace API.Context
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            //modelBuilder
-            //    .Entity<TouristPlace>(eb =>
-            //    {
-            //        eb.HasNoKey();
-            //    });
 
             modelBuilder
                 .Entity<TravelPackage>(eb =>
@@ -25,20 +20,21 @@ namespace API.Context
                     eb.HasKey(x => x.Id);
                     eb.OwnsOne(x => x.TouristPlace);
                 });
+
+            modelBuilder.Entity<Booking>()
+                .HasOne(bc => bc.Client)
+                .WithMany(b => b.TravelPackages)
+                .HasForeignKey(bc => bc.IdClient);
+            modelBuilder.Entity<Booking>()
+                .HasOne(bc => bc.TravelPackage)
+                .WithMany(c => c.Clients)
+                .HasForeignKey(bc => bc.IdTravelPackage);
         }
 
 
-        public DbSet<TravelPackage> TravelPackages { get; set; }        
+        public DbSet<TravelPackage> TravelPackages { get; set; }
         public DbSet<Client> Clients { get; set; }
         public DbSet<Booking> Bookings { get; set; }
     }
 
-    //public class OrderConfiguration : IEntityTypeConfiguration<TravelPackage>
-    //{
-    //    public void Configure(EntityTypeBuilder<TravelPackage> builder)
-    //    {
-    //        builder.HasKey(x => x.Id);
-    //        builder.OwnsOne(x => x.TouristPlaces);
-    //    }
-    //}
 }

@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace API.Migrations
 {
     [DbContext(typeof(ApplicationDBContext))]
-    [Migration("20200229031448_initial")]
+    [Migration("20200229041759_initial")]
     partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -34,6 +34,10 @@ namespace API.Migrations
                         .HasColumnType("INTEGER");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("IdClient");
+
+                    b.HasIndex("IdTravelPackage");
 
                     b.ToTable("Bookings");
                 });
@@ -84,6 +88,21 @@ namespace API.Migrations
                     b.ToTable("TravelPackages");
                 });
 
+            modelBuilder.Entity("API.Entities.Booking", b =>
+                {
+                    b.HasOne("API.Entities.Client", "Client")
+                        .WithMany("TravelPackages")
+                        .HasForeignKey("IdClient")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("API.Entities.TravelPackage", "TravelPackage")
+                        .WithMany("Clients")
+                        .HasForeignKey("IdTravelPackage")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
             modelBuilder.Entity("API.Entities.TravelPackage", b =>
                 {
                     b.OwnsOne("API.Entities.TouristPlace", "TouristPlace", b1 =>
@@ -91,10 +110,10 @@ namespace API.Migrations
                             b1.Property<int>("TravelPackageId")
                                 .HasColumnType("INTEGER");
 
-                            b1.Property<string>("Description")
+                            b1.Property<string>("DescriptionTouristPlace")
                                 .HasColumnType("TEXT");
 
-                            b1.Property<string>("Name")
+                            b1.Property<string>("NameTouristPlace")
                                 .HasColumnType("TEXT");
 
                             b1.HasKey("TravelPackageId");

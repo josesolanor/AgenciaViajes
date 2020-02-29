@@ -47,7 +47,7 @@ namespace API.Controllers
                 Description = data.Description,
                 Fecha = data.Fecha,
                 Type = data.Type,
-                TouristPlace = new TouristPlace(data.Name, data.Description)
+                TouristPlace = new TouristPlace(data.TouristPlace.Name, data.TouristPlace.Description)
             };
 
             _service.Insert(model);
@@ -67,7 +67,7 @@ namespace API.Controllers
                 Description = data.Description,
                 Fecha = data.Fecha,
                 Type = data.Type,
-                TouristPlace = new TouristPlace(data.Name, data.Description)
+                TouristPlace = new TouristPlace(data.TouristPlace.Name, data.TouristPlace.Description)
             };
             
             _service.Update(model);

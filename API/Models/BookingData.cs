@@ -1,11 +1,12 @@
-﻿using System;
+﻿using API.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace API.Entities
+namespace API.Models
 {
-    public class Booking
+    public class BookingData
     {
         public int Id { get; set; }
         public int IdClient { get; set; }

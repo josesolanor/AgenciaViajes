@@ -25,7 +25,7 @@ namespace API.Services
 
         public List<TravelPackage> GetAll()
         {
-            var result = _context.TravelPackages.Include(x => x.TouristPlace).ToList();
+            var result = _context.TravelPackages.ToList();
             return result;
         }
 

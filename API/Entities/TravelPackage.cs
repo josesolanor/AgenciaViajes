@@ -14,5 +14,6 @@ namespace API.Entities
         public DateTime Fecha { get; set; }
         public string Type { get; set; }
         public TouristPlace TouristPlace { get; set; }
-    }
+        public List<Booking> Clients { get; set; }
+}
 }
