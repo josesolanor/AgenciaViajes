@@ -46,8 +46,8 @@ namespace API.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<double>("Cellphone")
-                        .HasColumnType("REAL");
+                    b.Property<int>("Cellphone")
+                        .HasColumnType("INTEGER");
 
                     b.Property<string>("Email")
                         .HasColumnType("TEXT");
