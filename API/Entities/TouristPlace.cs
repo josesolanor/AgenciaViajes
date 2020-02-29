@@ -1,14 +1,34 @@
-﻿using System;
+﻿using API.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace API.Entities
 {
-    public class TouristPlace
+    public class TouristPlace : ValueObject
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public string Description { get; set; }
+        public string Name { get; private set; }
+
+        public string Description { get; private set; }
+
+        private TouristPlace() { }
+
+        public TouristPlace(string name, string description)
+        {
+            Name = name;
+            Description = description;            
+        }
+
+        public override string ToString()
+        {
+            return $"{Name}, {Description}";
+        }
+
+        protected override IEnumerable<object> GetAtomicValues()
+        {
+            yield return Name;
+            yield return Description;            
+        }
     }
 }

@@ -12,5 +12,13 @@ namespace API.Models
         public string Description { get; set; }
         public DateTime Fecha { get; set; }
         public string Type { get; set; }
+        public List<TouristPlaceForTravelPackage> TouristPlaces { get; set; }
+    }
+
+    public class TouristPlaceForTravelPackage
+    {
+        public string Name { get; set; }
+
+        public string Description { get; set; }
     }
 }

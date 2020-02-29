@@ -39,17 +39,14 @@ namespace API.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "TouristPlaces",
+                name: "TouristPlace",
                 columns: table => new
                 {
-                    Id = table.Column<int>(nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
                     Name = table.Column<string>(nullable: true),
                     Description = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_TouristPlaces", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -61,7 +58,8 @@ namespace API.Migrations
                     Name = table.Column<string>(nullable: true),
                     Description = table.Column<string>(nullable: true),
                     Fecha = table.Column<DateTime>(nullable: false),
-                    Type = table.Column<string>(nullable: true)
+                    Type = table.Column<string>(nullable: true),
+                    TouristPlaces_Capacity = table.Column<int>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -78,7 +76,7 @@ namespace API.Migrations
                 name: "Clients");
 
             migrationBuilder.DropTable(
-                name: "TouristPlaces");
+                name: "TouristPlace");
 
             migrationBuilder.DropTable(
                 name: "TravelPackages");

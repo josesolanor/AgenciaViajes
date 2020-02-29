@@ -30,25 +30,60 @@ namespace API.Controllers
         }
 
         
-        [HttpGet("{id}", Name = "Get")]
+        [HttpGet("{id}")]
         public IActionResult Get(int id)
         {
             return Json(_service.GetById(id));
         }
 
         [HttpPost]
-        public IActionResult Post([FromBody] TravelPackage data)
+        public IActionResult Post([FromBody] TravelPackageData data)
         {
-            _service.Insert(data);
+
+            var listTouristPlaces = new List<TouristPlace>();
+
+            foreach (var place in data.TouristPlaces)
+            {
+                listTouristPlaces.Add(new TouristPlace(place.Name, place.Description));
+            }
+
+            var model = new TravelPackage()
+            {
+                Id = data.Id,
+                Name = data.Name,
+                Description = data.Description,
+                Fecha = data.Fecha,
+                Type = data.Type,
+                TouristPlaces = listTouristPlaces
+            };
+
+            _service.Insert(model);
             _service.Save();
             return Ok();
         }
 
         [HttpPut("{id}")]
-        public IActionResult Put(int id, [FromBody] TravelPackage data)
+        public IActionResult Put(int id, [FromBody] TravelPackageData data)
         {
             data.Id = id;
-            _service.Update(data);
+            var listTouristPlaces = new List<TouristPlace>();
+
+            foreach (var place in data.TouristPlaces)
+            {
+                listTouristPlaces.Add(new TouristPlace(place.Name, place.Description));
+            }
+
+            var model = new TravelPackage()
+            {
+                Id = data.Id,
+                Name = data.Name,
+                Description = data.Description,
+                Fecha = data.Fecha,
+                Type = data.Type,
+                TouristPlaces = listTouristPlaces
+            };
+            
+            _service.Update(model);
             _service.Save();
             return Ok();
         }

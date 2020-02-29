@@ -14,7 +14,5 @@ namespace API.Interfaces
         void Update(T model);
         void Delete(T model);
         void Save();
-
-
     }
 }

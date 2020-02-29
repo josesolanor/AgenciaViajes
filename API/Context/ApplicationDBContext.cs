@@ -1,9 +1,6 @@
 ﻿using API.Entities;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+
 
 namespace API.Context
 {
@@ -14,11 +11,25 @@ namespace API.Context
 
         }
 
-        public DbSet<TravelPackage> TravelPackages { get; set; }
-        public DbSet<TouristPlace> TouristPlaces { get; set; }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder
+                .Entity<TouristPlace>(eb =>
+                {
+                    eb.HasNoKey(); 
+                });
+
+            modelBuilder
+                .Entity<TravelPackage>(eb =>
+                {
+                    eb.HasKey(x => x.Id);
+                    eb.OwnsOne(x => x.TouristPlaces);
+                });
+        }
+
+
+        public DbSet<TravelPackage> TravelPackages { get; set; }        
         public DbSet<Client> Clients { get; set; }
         public DbSet<Booking> Bookings { get; set; }
-
-
     }
 }

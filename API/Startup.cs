@@ -31,6 +31,7 @@ namespace API
         {
             services.AddControllers();
             services.AddTransient<ICRUDMethods<TravelPackage>, TravelPackageService>();
+            services.AddTransient<ICRUDMethods<Entities.Client>, ClientService>();
             services.AddDbContext<ApplicationDBContext>(options => options.UseSqlite("Filename=MyDatabase.db"));
             
         }

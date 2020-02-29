@@ -61,19 +61,13 @@ namespace API.Migrations
 
             modelBuilder.Entity("API.Entities.TouristPlace", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
-
                     b.Property<string>("Description")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Name")
                         .HasColumnType("TEXT");
 
-                    b.HasKey("Id");
-
-                    b.ToTable("TouristPlaces");
+                    b.ToTable("TouristPlace");
                 });
 
             modelBuilder.Entity("API.Entities.TravelPackage", b =>
@@ -97,6 +91,25 @@ namespace API.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("TravelPackages");
+                });
+
+            modelBuilder.Entity("API.Entities.TravelPackage", b =>
+                {
+                    b.OwnsOne("System.Collections.Generic.List<API.Entities.TouristPlace>", "TouristPlaces", b1 =>
+                        {
+                            b1.Property<int>("TravelPackageId")
+                                .HasColumnType("INTEGER");
+
+                            b1.Property<int>("Capacity")
+                                .HasColumnType("INTEGER");
+
+                            b1.HasKey("TravelPackageId");
+
+                            b1.ToTable("TravelPackages");
+
+                            b1.WithOwner()
+                                .HasForeignKey("TravelPackageId");
+                        });
                 });
 #pragma warning restore 612, 618
         }
