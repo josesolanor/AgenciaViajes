@@ -39,17 +39,6 @@ namespace API.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "TouristPlace",
-                columns: table => new
-                {
-                    Name = table.Column<string>(nullable: true),
-                    Description = table.Column<string>(nullable: true)
-                },
-                constraints: table =>
-                {
-                });
-
-            migrationBuilder.CreateTable(
                 name: "TravelPackages",
                 columns: table => new
                 {
@@ -59,7 +48,8 @@ namespace API.Migrations
                     Description = table.Column<string>(nullable: true),
                     Fecha = table.Column<DateTime>(nullable: false),
                     Type = table.Column<string>(nullable: true),
-                    TouristPlaces_Capacity = table.Column<int>(nullable: true)
+                    TouristPlace_Name = table.Column<string>(nullable: true),
+                    TouristPlace_Description = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -74,9 +64,6 @@ namespace API.Migrations
 
             migrationBuilder.DropTable(
                 name: "Clients");
-
-            migrationBuilder.DropTable(
-                name: "TouristPlace");
 
             migrationBuilder.DropTable(
                 name: "TravelPackages");

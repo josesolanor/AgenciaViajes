@@ -13,6 +13,6 @@ namespace API.Entities
         public string Description { get; set; }        
         public DateTime Fecha { get; set; }
         public string Type { get; set; }
-        public List<TouristPlace> TouristPlaces { get; set; }
+        public TouristPlace TouristPlace { get; set; }
     }
 }

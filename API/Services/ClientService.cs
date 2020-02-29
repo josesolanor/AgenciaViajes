@@ -24,7 +24,7 @@ namespace API.Services
 
         public List<Entities.Client> GetAll()
         {
-            return _context.Clients.ToList(); //please
+            return _context.Clients.ToList();
         }
 
         public Entities.Client GetById(int id)

@@ -8,12 +8,12 @@ using System.Threading.Tasks;
 
 namespace API.Context
 {
-    public class OrderConfiguration : IEntityTypeConfiguration<TravelPackage>
-    {
-        public void Configure(EntityTypeBuilder<TravelPackage> builder)
-        {
-            builder.HasKey(x => x.Id);
-            builder.OwnsOne(x => x.TouristPlaces);
-        }
-    }
+    //public class OrderConfiguration : IEntityTypeConfiguration<TravelPackage>
+    //{
+    //    public void Configure(EntityTypeBuilder<TravelPackage> builder)
+    //    {
+    //        builder.HasKey(x => x.Id);
+    //        builder.OwnsOne(x => x.TouristPlaces);
+    //    }
+    //}
 }

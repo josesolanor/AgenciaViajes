@@ -40,13 +40,6 @@ namespace API.Controllers
         public IActionResult Post([FromBody] TravelPackageData data)
         {
 
-            var listTouristPlaces = new List<TouristPlace>();
-
-            foreach (var place in data.TouristPlaces)
-            {
-                listTouristPlaces.Add(new TouristPlace(place.Name, place.Description));
-            }
-
             var model = new TravelPackage()
             {
                 Id = data.Id,
@@ -54,7 +47,7 @@ namespace API.Controllers
                 Description = data.Description,
                 Fecha = data.Fecha,
                 Type = data.Type,
-                TouristPlaces = listTouristPlaces
+                TouristPlace = new TouristPlace(data.Name, data.Description)
             };
 
             _service.Insert(model);
@@ -66,12 +59,6 @@ namespace API.Controllers
         public IActionResult Put(int id, [FromBody] TravelPackageData data)
         {
             data.Id = id;
-            var listTouristPlaces = new List<TouristPlace>();
-
-            foreach (var place in data.TouristPlaces)
-            {
-                listTouristPlaces.Add(new TouristPlace(place.Name, place.Description));
-            }
 
             var model = new TravelPackage()
             {
@@ -80,7 +67,7 @@ namespace API.Controllers
                 Description = data.Description,
                 Fecha = data.Fecha,
                 Type = data.Type,
-                TouristPlaces = listTouristPlaces
+                TouristPlace = new TouristPlace(data.Name, data.Description)
             };
             
             _service.Update(model);

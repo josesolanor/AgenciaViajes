@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace API.Migrations
 {
     [DbContext(typeof(ApplicationDBContext))]
-    [Migration("20200229021936_initial")]
+    [Migration("20200229031448_initial")]
     partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -61,17 +61,6 @@ namespace API.Migrations
                     b.ToTable("Clients");
                 });
 
-            modelBuilder.Entity("API.Entities.TouristPlace", b =>
-                {
-                    b.Property<string>("Description")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Name")
-                        .HasColumnType("TEXT");
-
-                    b.ToTable("TouristPlace");
-                });
-
             modelBuilder.Entity("API.Entities.TravelPackage", b =>
                 {
                     b.Property<int>("Id")
@@ -97,13 +86,16 @@ namespace API.Migrations
 
             modelBuilder.Entity("API.Entities.TravelPackage", b =>
                 {
-                    b.OwnsOne("System.Collections.Generic.List<API.Entities.TouristPlace>", "TouristPlaces", b1 =>
+                    b.OwnsOne("API.Entities.TouristPlace", "TouristPlace", b1 =>
                         {
                             b1.Property<int>("TravelPackageId")
                                 .HasColumnType("INTEGER");
 
-                            b1.Property<int>("Capacity")
-                                .HasColumnType("INTEGER");
+                            b1.Property<string>("Description")
+                                .HasColumnType("TEXT");
+
+                            b1.Property<string>("Name")
+                                .HasColumnType("TEXT");
 
                             b1.HasKey("TravelPackageId");
 
