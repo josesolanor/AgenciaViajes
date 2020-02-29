@@ -1,6 +1,6 @@
 ﻿using API.Entities;
 using Microsoft.EntityFrameworkCore;
-
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace API.Context
 {
@@ -13,17 +13,17 @@ namespace API.Context
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder
-                .Entity<TouristPlace>(eb =>
-                {
-                    eb.HasNoKey(); 
-                });
+            //modelBuilder
+            //    .Entity<TouristPlace>(eb =>
+            //    {
+            //        eb.HasNoKey();
+            //    });
 
             modelBuilder
                 .Entity<TravelPackage>(eb =>
                 {
                     eb.HasKey(x => x.Id);
-                    eb.OwnsOne(x => x.TouristPlaces);
+                    eb.OwnsOne(x => x.TouristPlace);
                 });
         }
 
@@ -32,4 +32,13 @@ namespace API.Context
         public DbSet<Client> Clients { get; set; }
         public DbSet<Booking> Bookings { get; set; }
     }
+
+    //public class OrderConfiguration : IEntityTypeConfiguration<TravelPackage>
+    //{
+    //    public void Configure(EntityTypeBuilder<TravelPackage> builder)
+    //    {
+    //        builder.HasKey(x => x.Id);
+    //        builder.OwnsOne(x => x.TouristPlaces);
+    //    }
+    //}
 }

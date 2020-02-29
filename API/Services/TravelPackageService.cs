@@ -1,6 +1,7 @@
 ﻿using API.Context;
 using API.Entities;
 using API.Interfaces;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,7 +25,8 @@ namespace API.Services
 
         public List<TravelPackage> GetAll()
         {
-            return _context.TravelPackages.ToList();
+            var result = _context.TravelPackages.Include(x => x.TouristPlace).ToList();
+            return result;
         }
 
         public TravelPackage GetById(int id)
