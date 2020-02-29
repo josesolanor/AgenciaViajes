@@ -1,0 +1,319 @@
+{
+	"info": {
+		"_postman_id": "ca0676bb-ba07-4f75-b51a-1ce9ee7a5ea6",
+		"name": "TravelAgency",
+		"description": "Proyecto de maestria con las pruebas de los endpoints del sistema en local mediante visual studio 2019",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "TravelPackage",
+			"item": [
+				{
+					"name": "GetAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:55287/api/TravelPackages",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "55287",
+							"path": [
+								"api",
+								"TravelPackages"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Insert",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\":\"Viaje a Japon\",\n\t\"description\":\"Un viaje a la maravillosa isla nippon\",\n\t\"fecha\":\"2020-02-28\",\n\t\"type\":\"Vacaciones\",\n\t\"touristPlace\":\n\t\t{\n\t\t\t\"name\":\"Osaka\",\n\t\t\t\"description\": \"Ciudad hermosa\"\n\t\t}\n\t\t\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:55287/api/TravelPackages",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "55287",
+							"path": [
+								"api",
+								"TravelPackages"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:55287/api/TravelPackages/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "55287",
+							"path": [
+								"api",
+								"TravelPackages",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\": 1,\n\t\"name\":\"Viaje a china\",\n\t\"description\":\"Un viaje turistico por china, en especial a Wuhan, por que para comprar este paquete debes estar bien pendejo\",\n\t\"fecha\":\"2020-02-28\",\n\t\"type\":\"Suicida\",\n\t\"touristPlaces\":\n\t[\n\t\t{\n\t\t\t\"name\": \"Wuhan\",\n\t\t\t\"description\": \"Zona bien chingona\"\n\t\t},\n\t\t{\n\t\t\t\"name\": \"HongKong\",\n\t\t\t\"description\": \"Zona una mas chingona\"\n\t\t}\n\t]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:55287/api/TravelPackages/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "55287",
+							"path": [
+								"api",
+								"TravelPackages",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:55287/api/TravelPackages/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "55287",
+							"path": [
+								"api",
+								"TravelPackages",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Clients",
+			"item": [
+				{
+					"name": "GetAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:55287/api/Clients",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "55287",
+							"path": [
+								"api",
+								"Clients"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Booking",
+			"item": [
+				{
+					"name": "GetAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:55287/api/Booking",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "55287",
+							"path": [
+								"api",
+								"Booking"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Insert",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"cost\": 2500,\n\t\"idClient\": 1,\n\t\"idTravelPackage\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:55287/api/Booking",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "55287",
+							"path": [
+								"api",
+								"Booking"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:55287/api/Booking/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "55287",
+							"path": [
+								"api",
+								"Booking",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"cost\": 1000,\n\t\"idClient\": 1,\n\t\"idTravelPackage\": 3\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:55287/api/Booking/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "55287",
+							"path": [
+								"api",
+								"Booking",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:55287/api/Booking/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "55287",
+							"path": [
+								"api",
+								"Booking",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
