@@ -74,6 +74,6 @@ dotnet run
 * TravelPackage
 
 ### Probando servicios con Postman
-Se debe importar el archivo json que postman requiere para probar los servicios, el archivo se encuentra en la raiz https://github.com/josesolanor/AgenciaViajes. 
+Se debe importar el archivo json que postman requiere para probar los servicios, el archivo se encuentra en la raiz con el nombre "TravelAgency.postman_collection.json". https://github.com/josesolanor/AgenciaViajes. 
 
 
