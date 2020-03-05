@@ -1,6 +1,5 @@
 ﻿using API.Entities;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace API.Context
 {
@@ -8,12 +7,15 @@ namespace API.Context
     {
         public ApplicationDBContext(DbContextOptions<ApplicationDBContext> options) : base(options)
         {
-
         }
+
+
+        public DbSet<TravelPackage> TravelPackages { get; set; }
+        public DbSet<Client> Clients { get; set; }
+        public DbSet<Booking> Bookings { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-
             modelBuilder
                 .Entity<TravelPackage>(eb =>
                 {
@@ -30,11 +32,5 @@ namespace API.Context
                 .WithMany(c => c.Clients)
                 .HasForeignKey(bc => bc.IdTravelPackage);
         }
-
-
-        public DbSet<TravelPackage> TravelPackages { get; set; }
-        public DbSet<Client> Clients { get; set; }
-        public DbSet<Booking> Bookings { get; set; }
     }
-
 }

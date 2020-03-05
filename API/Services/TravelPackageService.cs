@@ -1,17 +1,14 @@
-﻿using API.Context;
+﻿using System.Collections.Generic;
+using System.Linq;
+using API.Context;
 using API.Entities;
 using API.Interfaces;
-using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace API.Services
 {
     public class TravelPackageService : ICRUDMethods<TravelPackage>
     {
-        private ApplicationDBContext _context;
+        private readonly ApplicationDBContext _context;
 
         public TravelPackageService(ApplicationDBContext context)
         {

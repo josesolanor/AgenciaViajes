@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using API.Entities;
+﻿using API.Entities;
 using API.Interfaces;
 using API.Models;
-using API.Services;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers
@@ -15,7 +9,6 @@ namespace API.Controllers
     [ApiController]
     public class TravelPackagesController : Controller
     {
-
         private readonly ICRUDMethods<TravelPackage> _service;
 
         public TravelPackagesController(ICRUDMethods<TravelPackage> service)
@@ -29,7 +22,7 @@ namespace API.Controllers
             return Json(_service.GetAll());
         }
 
-        
+
         [HttpGet("{id}")]
         public IActionResult Get(int id)
         {
@@ -39,8 +32,7 @@ namespace API.Controllers
         [HttpPost]
         public IActionResult Post([FromBody] TravelPackageData data)
         {
-
-            var model = new TravelPackage()
+            var model = new TravelPackage
             {
                 Id = data.Id,
                 Name = data.Name,
@@ -60,7 +52,7 @@ namespace API.Controllers
         {
             data.Id = id;
 
-            var model = new TravelPackage()
+            var model = new TravelPackage
             {
                 Id = data.Id,
                 Name = data.Name,
@@ -69,7 +61,7 @@ namespace API.Controllers
                 Type = data.Type,
                 TouristPlace = new TouristPlace(data.TouristPlace.Name, data.TouristPlace.Description)
             };
-            
+
             _service.Update(model);
             _service.Save();
             return Ok();
@@ -78,8 +70,7 @@ namespace API.Controllers
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
-
-            _service.Delete(new TravelPackage { Id = id });
+            _service.Delete(new TravelPackage {Id = id});
             _service.Save();
             return Ok();
         }

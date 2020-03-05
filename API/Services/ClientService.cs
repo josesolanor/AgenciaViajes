@@ -1,14 +1,13 @@
-﻿using API.Context;
-using API.Entities;
-using API.Interfaces;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
+using API.Context;
+using API.Entities;
+using API.Interfaces;
 
 namespace API.Services
 {
-    public class ClientService : ICRUDMethods<Entities.Client>
+    public class ClientService : ICRUDMethods<Client>
     {
         private readonly ApplicationDBContext _context;
 
@@ -17,22 +16,22 @@ namespace API.Services
             _context = context;
         }
 
-        public void Delete(Entities.Client model)
+        public void Delete(Client model)
         {
             throw new NotImplementedException();
         }
 
-        public List<Entities.Client> GetAll()
+        public List<Client> GetAll()
         {
             return _context.Clients.ToList();
         }
 
-        public Entities.Client GetById(int id)
+        public Client GetById(int id)
         {
             throw new NotImplementedException();
         }
 
-        public void Insert(Entities.Client model)
+        public void Insert(Client model)
         {
             throw new NotImplementedException();
         }
@@ -42,7 +41,7 @@ namespace API.Services
             throw new NotImplementedException();
         }
 
-        public void Update(Entities.Client model)
+        public void Update(Client model)
         {
             throw new NotImplementedException();
         }

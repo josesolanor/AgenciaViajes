@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using API.Entities;
 using API.Interfaces;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers
@@ -12,9 +8,9 @@ namespace API.Controllers
     [ApiController]
     public class ClientsController : Controller
     {
-        private readonly ICRUDMethods<Entities.Client> _service;
+        private readonly ICRUDMethods<Client> _service;
 
-        public ClientsController(ICRUDMethods<Entities.Client> service)
+        public ClientsController(ICRUDMethods<Client> service)
         {
             _service = service;
         }

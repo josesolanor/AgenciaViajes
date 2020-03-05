@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using API.Entities;
+﻿using API.Entities;
 using API.Interfaces;
 using API.Models;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers
@@ -49,7 +44,6 @@ namespace API.Controllers
             _service.Insert(booking);
             _service.Save();
             return Ok();
-
         }
 
         [HttpPut("{id}")]

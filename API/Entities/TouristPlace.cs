@@ -1,24 +1,23 @@
-﻿using API.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using API.Interfaces;
 
 namespace API.Entities
 {
     public class TouristPlace : ValueObject
     {
-        public string NameTouristPlace { get; private set; }
-
-        public string DescriptionTouristPlace { get; private set; }
-
-        private TouristPlace() { }
+        private TouristPlace()
+        {
+        }
 
         public TouristPlace(string name, string description)
         {
             NameTouristPlace = name;
-            DescriptionTouristPlace = description;            
+            DescriptionTouristPlace = description;
         }
+
+        public string NameTouristPlace { get; }
+
+        public string DescriptionTouristPlace { get; }
 
         public override string ToString()
         {
@@ -28,7 +27,7 @@ namespace API.Entities
         protected override IEnumerable<object> GetAtomicValues()
         {
             yield return NameTouristPlace;
-            yield return DescriptionTouristPlace;            
+            yield return DescriptionTouristPlace;
         }
     }
 }
