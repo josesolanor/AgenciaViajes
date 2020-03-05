@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
-using AgenciaViajes.API.Interfaces;
+using AgenciaViajes.Presentation.API.Interfaces;
 
-namespace AgenciaViajes.API.Entities
+namespace AgenciaViajes.Presentation.API.Entities
 {
     public class TouristPlace : ValueObject
     {

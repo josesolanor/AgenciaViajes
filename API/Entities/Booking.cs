@@ -1,4 +1,4 @@
-﻿namespace AgenciaViajes.API.Entities
+﻿namespace AgenciaViajes.Presentation.API.Entities
 {
     public class Booking
     {

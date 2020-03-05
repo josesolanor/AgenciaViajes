@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace AgenciaViajes.API.Interfaces
+namespace AgenciaViajes.Presentation.API.Interfaces
 {
     public interface ICRUDMethods<T>
     {

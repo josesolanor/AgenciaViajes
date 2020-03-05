@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using AgenciaViajes.API.Context;
-using AgenciaViajes.API.Entities;
-using AgenciaViajes.API.Interfaces;
+using AgenciaViajes.Presentation.API.Context;
+using AgenciaViajes.Presentation.API.Entities;
+using AgenciaViajes.Presentation.API.Interfaces;
 
-namespace AgenciaViajes.API.Services
+namespace AgenciaViajes.Presentation.API.Services
 {
     public class TravelPackageService : ICRUDMethods<TravelPackage>
     {

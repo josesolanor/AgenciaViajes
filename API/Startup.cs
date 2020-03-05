@@ -1,7 +1,7 @@
-using AgenciaViajes.API.Context;
-using AgenciaViajes.API.Entities;
-using AgenciaViajes.API.Interfaces;
-using AgenciaViajes.API.Services;
+using AgenciaViajes.Presentation.API.Context;
+using AgenciaViajes.Presentation.API.Entities;
+using AgenciaViajes.Presentation.API.Interfaces;
+using AgenciaViajes.Presentation.API.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -9,7 +9,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
-namespace AgenciaViajes.API
+namespace AgenciaViajes.Presentation.API
 {
     public class Startup
     {

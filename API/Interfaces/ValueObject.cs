@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace AgenciaViajes.API.Interfaces
+namespace AgenciaViajes.Presentation.API.Interfaces
 {
     public abstract class ValueObject
     {

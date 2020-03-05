@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace AgenciaViajes.API.Entities
+namespace AgenciaViajes.Presentation.API.Entities
 {
     public class TravelPackage
     {
