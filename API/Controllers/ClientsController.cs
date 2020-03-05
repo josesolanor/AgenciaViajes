@@ -1,8 +1,8 @@
-﻿using API.Entities;
-using API.Interfaces;
+﻿using AgenciaViajes.API.Entities;
+using AgenciaViajes.API.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
-namespace API.Controllers
+namespace AgenciaViajes.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

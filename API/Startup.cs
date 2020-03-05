@@ -1,21 +1,15 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using API.Context;
-using API.Entities;
-using API.Interfaces;
-using API.Services;
+using AgenciaViajes.API.Context;
+using AgenciaViajes.API.Entities;
+using AgenciaViajes.API.Interfaces;
+using AgenciaViajes.API.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 
-namespace API
+namespace AgenciaViajes.API
 {
     public class Startup
     {

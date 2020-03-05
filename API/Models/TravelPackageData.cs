@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace API.Models
+namespace AgenciaViajes.API.Models
 {
     public class TravelPackageData
     {

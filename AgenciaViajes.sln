@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29519.87
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "API", "API\API.csproj", "{9E49163F-47A8-45F7-8776-F52FEFE4B89E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AgenciaViajes.API", "API\AgenciaViajes.API.csproj", "{9E49163F-47A8-45F7-8776-F52FEFE4B89E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

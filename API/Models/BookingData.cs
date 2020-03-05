@@ -1,6 +1,6 @@
-﻿using API.Entities;
+﻿using AgenciaViajes.API.Entities;
 
-namespace API.Models
+namespace AgenciaViajes.API.Models
 {
     public class BookingData
     {

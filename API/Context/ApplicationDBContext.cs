@@ -1,7 +1,7 @@
-﻿using API.Entities;
+﻿using AgenciaViajes.API.Entities;
 using Microsoft.EntityFrameworkCore;
 
-namespace API.Context
+namespace AgenciaViajes.API.Context
 {
     public class ApplicationDBContext : DbContext
     {

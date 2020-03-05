@@ -1,11 +1,11 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using API.Context;
-using API.Entities;
-using API.Interfaces;
+using AgenciaViajes.API.Context;
+using AgenciaViajes.API.Entities;
+using AgenciaViajes.API.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
-namespace API.Services
+namespace AgenciaViajes.API.Services
 {
     public class BookingService : ICRUDMethods<Booking>
     {
