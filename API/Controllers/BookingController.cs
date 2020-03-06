@@ -1,4 +1,4 @@
-﻿using AgenciaViajes.Presentation.API.Entities;
+﻿using AgenciaViajes.Infrastructure.Models;
 using AgenciaViajes.Presentation.API.Interfaces;
 using AgenciaViajes.Presentation.API.Models;
 using Microsoft.AspNetCore.Mvc;

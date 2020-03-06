@@ -1,5 +1,6 @@
-using AgenciaViajes.Presentation.API.Context;
-using AgenciaViajes.Presentation.API.Entities;
+using AgenciaViajes.Infrastructure;
+using AgenciaViajes.Infrastructure.Data;
+using AgenciaViajes.Infrastructure.Models;
 using AgenciaViajes.Presentation.API.Interfaces;
 using AgenciaViajes.Presentation.API.Services;
 using Microsoft.AspNetCore.Builder;
@@ -23,15 +24,13 @@ namespace AgenciaViajes.Presentation.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddInfrastructure(Configuration);
             services.AddMvc().AddNewtonsoftJson(options => options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
             services.AddControllers();
             
-
             services.AddTransient<ICRUDMethods<TravelPackage>, TravelPackageService>();
-            services.AddTransient<ICRUDMethods<Entities.Client>, ClientService>();
-            services.AddTransient<ICRUDMethods<Booking>, BookingService>();
-            services.AddDbContext<ApplicationDBContext>(options => options.UseSqlite("Filename=MyDatabase.db"));
-            
+            services.AddTransient<ICRUDMethods<Client>, ClientService>();
+            services.AddTransient<ICRUDMethods<Booking>, BookingService>();            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
