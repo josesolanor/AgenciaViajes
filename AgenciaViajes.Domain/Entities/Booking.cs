@@ -1,4 +1,4 @@
-﻿namespace AgenciaViajes.Infrastructure.Models
+﻿namespace AgenciaViajes.Domain.Entities
 {
     public class Booking
     {

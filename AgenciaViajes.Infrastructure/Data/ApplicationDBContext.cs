@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using AgenciaViajes.Infrastructure.Models;
+using AgenciaViajes.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace AgenciaViajes.Infrastructure.Data

@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using AgenciaViajes.Domain.Entities;
 using AgenciaViajes.Infrastructure.Data;
-using AgenciaViajes.Infrastructure.Models;
 using AgenciaViajes.Presentation.API.Interfaces;
 
 namespace AgenciaViajes.Presentation.API.Services

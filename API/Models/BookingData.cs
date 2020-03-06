@@ -1,4 +1,6 @@
-﻿using AgenciaViajes.Infrastructure.Models;
+﻿
+
+using AgenciaViajes.Domain.Entities;
 
 namespace AgenciaViajes.Presentation.API.Models
 {

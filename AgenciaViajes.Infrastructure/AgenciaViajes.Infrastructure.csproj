@@ -17,4 +17,8 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\AgenciaViajes.Domain\AgenciaViajes.Domain.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -1,6 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using AgenciaViajes.Domain.ValueObjects;
+using System.Collections.Generic;
 
-namespace AgenciaViajes.Infrastructure.Models
+namespace AgenciaViajes.Domain.Entities
 {
     public class TouristPlace : ValueObject
     {

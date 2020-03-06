@@ -1,4 +1,4 @@
-﻿using AgenciaViajes.Infrastructure.Models;
+﻿using AgenciaViajes.Domain.Entities;
 using AgenciaViajes.Presentation.API.Interfaces;
 using AgenciaViajes.Presentation.API.Models;
 using Microsoft.AspNetCore.Mvc;
@@ -9,7 +9,7 @@ namespace AgenciaViajes.Presentation.API.Controllers
     [ApiController]
     public class BookingController : Controller
     {
-        private readonly ICRUDMethods<Booking> _service;
+        private readonly ICRUDMethods<Domain.Entities.Booking> _service;
 
         public BookingController(ICRUDMethods<Booking> service)
         {

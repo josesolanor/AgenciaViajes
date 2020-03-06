@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace AgenciaViajes.Infrastructure.Models
+namespace AgenciaViajes.Domain.ValueObjects
 {
     public abstract class ValueObject
     {

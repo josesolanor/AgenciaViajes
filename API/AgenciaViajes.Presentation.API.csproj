@@ -26,6 +26,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\AgenciaViajes.Domain\AgenciaViajes.Domain.csproj" />
     <ProjectReference Include="..\AgenciaViajes.Infrastructure\AgenciaViajes.Infrastructure.csproj" />
   </ItemGroup>
 
