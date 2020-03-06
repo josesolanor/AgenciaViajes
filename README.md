@@ -4,9 +4,12 @@ _Autor: Jose G Solano Romero - Alvaro Valdivia Calizaya_
 
 _Proyecto final para el modulo 6 Arquitectura de Software_
 
-_Implementar las  entidades de Agencia de Viajes usando los patrones Value Object y Repository.:
+_Implementar Arquitectura Limpia para el proyecto de Agencia de viajes_
 
-* Aplicacion API - Asp.net API Core 3.0
+* AgenciaViajes.Presentacion.API - Asp.net API Core 3.0
+* AgenciaViajes.Domain - Biblioteca de clases Core 3.0
+* AgenciaViajes.Infraestruture  - Biblioteca de clases Core 3.0
+* AgenciaViajes.Application  - Biblioteca de clases Core 3.0
 
 ## Pre-requisitos e Instalacion 📋
 
@@ -66,12 +69,30 @@ Y para inicializar cada proyecto debemos ejecutar el siguiente comando en cada t
 ```
 dotnet run
 ```
-### Entidades
+## Arquitectura del sistema
 
-* Booking
-* Client
-* TouristPlace---- Value Object
-* TravelPackage
+### Application
+
+* Interfaces
+* Models
+* Services
+
+### Domain
+
+* Entities
+* Value Objects
+
+### Infrastructure
+
+* Data
+* Migration
+* _Dependency Injection_
+
+### Presentation.API
+
+* Controllers
+* _Program_
+* _Startup_
 
 ### Probando servicios con Postman
 Se debe importar el archivo json que postman requiere para probar los servicios, el archivo se encuentra en la raiz con el nombre "TravelAgency.postman_collection.json". https://github.com/josesolanor/AgenciaViajes. 
