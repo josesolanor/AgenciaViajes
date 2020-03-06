@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using AgenciaViajes.Domain.Entities;
 using AgenciaViajes.Infrastructure.Data;
-using AgenciaViajes.Presentation.API.Interfaces;
+using AgenciaViajes.Application.Interfaces;
 
-namespace AgenciaViajes.Presentation.API.Services
+namespace AgenciaViajes.Application.Services
 {
     public class ClientService : ICRUDMethods<Client>
     {

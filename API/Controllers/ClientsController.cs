@@ -1,5 +1,5 @@
 ﻿using AgenciaViajes.Domain.Entities;
-using AgenciaViajes.Presentation.API.Interfaces;
+using AgenciaViajes.Application.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AgenciaViajes.Presentation.API.Controllers

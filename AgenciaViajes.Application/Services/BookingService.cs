@@ -2,10 +2,10 @@
 using System.Linq;
 using AgenciaViajes.Domain.Entities;
 using AgenciaViajes.Infrastructure.Data;
-using AgenciaViajes.Presentation.API.Interfaces;
+using AgenciaViajes.Application.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
-namespace AgenciaViajes.Presentation.API.Services
+namespace AgenciaViajes.Application.Services
 {
     public class BookingService : ICRUDMethods<Booking>
     {

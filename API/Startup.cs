@@ -1,11 +1,9 @@
 using AgenciaViajes.Infrastructure;
-using AgenciaViajes.Infrastructure.Data;
 using AgenciaViajes.Domain.Entities;
-using AgenciaViajes.Presentation.API.Interfaces;
-using AgenciaViajes.Presentation.API.Services;
+using AgenciaViajes.Application.Interfaces;
+using AgenciaViajes.Application.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
